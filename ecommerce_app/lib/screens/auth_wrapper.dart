@@ -1,9 +1,8 @@
-import 'package:ecommerce_app/screens/home_screen.dart';
-import 'package:ecommerce_app/screens/login_screen.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:ecommerce_app/screens/login_screen.dart';
+import 'package:ecommerce_app/screens/home_screen.dart';
 
-// Part 2: Widget Definition
 class AuthWrapper extends StatelessWidget {
   const AuthWrapper({super.key});
 
@@ -13,23 +12,23 @@ class AuthWrapper extends StatelessWidget {
     return StreamBuilder<User?>(
       // 2. This is the stream from Firebase
       stream: FirebaseAuth.instance.authStateChanges(),
-
       // 3. The builder runs every time the auth state changes
       builder: (context, snapshot) {
-
         // 4. If the snapshot is still loading, show a spinner
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const Scaffold(
-            body: Center(child: CircularProgressIndicator()),
+            body: Center(
+              child: CircularProgressIndicator(),
+            ),
           );
         }
 
         // 5. If the snapshot has data, a user is logged in
-        if (snapshot.hasData) {
+        if (snapshot.hasData && snapshot.data != null) {
           return const HomeScreen(); // Show the home screen
         }
 
-        // 6. If the snapshot has no data, no user is logged in
+        // If user is not logged in, show LoginScreen
         return const LoginScreen(); // Show the login screen
       },
     );

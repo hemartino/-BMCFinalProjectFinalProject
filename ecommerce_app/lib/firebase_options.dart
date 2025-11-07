@@ -33,7 +33,10 @@ class DefaultFirebaseOptions {
               'you can reconfigure this by running the FlutterFire CLI again.',
         );
       case TargetPlatform.windows:
-        return windows;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for windows - '
+              'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.linux:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for linux - '
@@ -47,28 +50,20 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyBtDDxzc7dIM9yppV74DW8Q0GlkquL-HdE',
-    appId: '1:659819097891:web:50ce404d8a25c4f25ae696',
-    messagingSenderId: '659819097891',
-    projectId: 'my-ecommerce-app-141',
-    authDomain: 'my-ecommerce-app-141.firebaseapp.com',
-    storageBucket: 'my-ecommerce-app-141.firebasestorage.app',
+    apiKey: 'AIzaSyDAV4FnMhBrue6npfzPveLAX_XdXy4tLx0',
+    appId: '1:238817099027:web:c6f4020cbb40b849bbaee6',
+    messagingSenderId: '238817099027',
+    projectId: 'my-ecommerce-app-8e1a1',
+    authDomain: 'my-ecommerce-app-8e1a1.firebaseapp.com',
+    storageBucket: 'my-ecommerce-app-8e1a1.firebasestorage.app',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyD0gC5nHV7tNEi6DxjbWFJpkdD46ZoQAIc',
-    appId: '1:659819097891:android:46f155c9f68da9da5ae696',
-    messagingSenderId: '659819097891',
-    projectId: 'my-ecommerce-app-141',
-    storageBucket: 'my-ecommerce-app-141.firebasestorage.app',
+    apiKey: 'AIzaSyBwhcm8dwBoCmUCQ9uaRBtkuY5hyW9T-Ks',
+    appId: '1:238817099027:android:e65f59a6b2596106bbaee6',
+    messagingSenderId: '238817099027',
+    projectId: 'my-ecommerce-app-8e1a1',
+    storageBucket: 'my-ecommerce-app-8e1a1.firebasestorage.app',
   );
 
-  static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyBz0pX9sVfx-sBmms-tbTR6aHN3_OMxqhM',
-    appId: '1:337473087645:web:21947c136bfa0e70918c74',
-    messagingSenderId: '337473087645',
-    projectId: 'my-ecommerce-app-down',
-    authDomain: 'my-ecommerce-app-down.firebaseapp.com',
-    storageBucket: 'my-ecommerce-app-down.firebasestorage.app',
-  );
 }
